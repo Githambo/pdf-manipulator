@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title%}Merge pdf {% endblock title%}
+
+{% block content %}
+
+<p>Upload th PDF to be merged.</p>
+<br>
+<form method="post" enctype="multipart/form-data" action="">
+  {% csrf_token %}
+  {{ form|crispy }}
+  <br>
+  <button type="submit" class="btn btn-primary">Merge</button>
+</form>
+
+{% endblock content %}

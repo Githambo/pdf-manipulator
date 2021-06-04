@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Multiple Pages Extraction{% endblock title %}
+
+{% block content %}
+
+<p>Please enter page range such as <b>from_page-to_page</b></p>
+{{ form.non_field_errors }}
+<form method="post" enctype="multipart/form-data" action="">
+	{% csrf_token %}
+	{{ form|crispy }}
+	<br>
+     <button type="submit" class="btn btn-primary">Extract</button>
+</form>
+{% endblock content %}
